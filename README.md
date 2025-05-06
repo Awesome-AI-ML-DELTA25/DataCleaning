@@ -11,4 +11,4 @@
 - Create a .gitignore file to ignore the data files
 - Create a branch for your project on this repository
 
-The best project will be merged into the main branch and will be used as a template for future projects.
+The best project will be merged into the main branch for showcase! Good luck!
