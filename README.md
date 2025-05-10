@@ -22,11 +22,11 @@ The notebook covers the following topics:
 
 1. Clone the repository:
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/Awesome-AI-ML-DELTA25/DataCleaning.git
     ```
-2. Navigate to the directory:
+2. Ensure you are in the correct branch (if applicable):
     ```bash
-    cd WeekWise-Schedule/week1/DataCleaning
+    git checkout sct
     ```
 3. Install dependencies:
     ```bash
