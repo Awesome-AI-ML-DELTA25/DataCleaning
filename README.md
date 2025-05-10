@@ -1,14 +1,52 @@
-# To Do
-- Create a conda environment to store the packages
-- Unzip the data (use !unzip on terminal or use python package zipfile)
-- Load the data into a pandas dataframe
-- Clean the data (up to your discretion)
-- Work solo or in pairs
-- Ensure that your code is well commented
-- Create a jupyter notebook to document your work
-- Create a README file to explain your project, your process, and your findings
-- Create a requirements.txt file to document the packages you used
-- Create a .gitignore file to ignore the data files
-- Create a branch for your project on this repository
+# Data Cleaning
 
-The best project will be merged into the main branch for showcase! Good luck!
+This repository contains the `data_cleaning.ipynb` notebook, which demonstrates essential techniques for cleaning and preprocessing data for machine learning workflows.
+
+## Overview
+
+The notebook covers the following topics:
+- Handling missing values
+- Removing duplicates
+- Data type conversions
+- Outlier detection and treatment
+- Normalization and scaling
+- Encoding categorical variables
+
+## Prerequisites
+
+- Python 3.x
+- Jupyter Notebook
+- Required libraries: `pandas`, `matplotlib`, `seaborn`
+
+## How to Use
+
+1. Clone the repository:
+    ```bash
+    git clone <repository-url>
+    ```
+2. Navigate to the directory:
+    ```bash
+    cd WeekWise-Schedule/week1/DataCleaning
+    ```
+3. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. Open the notebook:
+    ```bash
+    jupyter notebook data_cleaning.ipynb
+    ```
+
+## Key Outputs
+
+- Cleaned dataset ready for analysis or modeling.
+- Visualizations to understand data distributions and outliers.
+
+## Note
+
+This notebook is a clone from the original repository. Any modifications or enhancements made are specific to the Awesome ML Program for Summer 2025.
+
+## Author
+
+Sai Charan  
+Summer 2025 - Awesome ML Program
