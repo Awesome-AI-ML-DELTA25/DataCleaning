@@ -1,14 +1,38 @@
-# To Do
-- Create a conda environment to store the packages
-- Unzip the data (use !unzip on terminal or use python package zipfile)
-- Load the data into a pandas dataframe
-- Clean the data (up to your discretion)
-- Work solo or in pairs
-- Ensure that your code is well commented
-- Create a jupyter notebook to document your work
-- Create a README file to explain your project, your process, and your findings
-- Create a requirements.txt file to document the packages you used
-- Create a .gitignore file to ignore the data files
-- Create a branch for your project on this repository
+# Data Cleaning Project
+## Objective
 
-The best project will be merged into the main branch for showcase! Good luck!
+The primary goal of this project is to explore, clean, and preprocess raw data by handling issues such as:
+- Missing values
+- Duplicates
+- Inconsistent formatting
+- Outliers
+- Data type mismatches
+
+By the end of this project, the data is cleaned and ready for downstream tasks like visualization, modeling, or statistical analysis.
+
+---
+
+## Dataset
+
+The dataset used for this project is located inside `dataset.zip` and was extracted before processing. The data was loaded using `pandas` and cleaned as per the quality issues observed during exploration.
+
+---
+
+## Notebook: `data_cleaning.ipynb`
+
+The Jupyter notebook contains:
+- Dataset loading and initial inspection
+- Summary statistics and data types
+- Visualizations for missing values, outliers, and distributions
+- Cleaning steps with proper explanations and reasoning
+- Final dataset shape and confirmation of clean data
+
+### Visualizations Used:
+- Histograms for distribution analysis
+- Box plots for outlier detection
+- Bar plots for categorical feature exploration
+- Heatmaps for correlation analysis
+- Missing value heatmap
+
+
+#### Inferences drawn from graphs
