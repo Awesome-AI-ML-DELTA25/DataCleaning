@@ -44,7 +44,7 @@ The notebook covers the following topics:
 
 ## Note
 
-This notebook is a clone from the original repository. Any modifications or enhancements made are specific to the Awesome ML Program for Summer 2025.
+This notebook is modified from a clone in the original repository. Any modifications or enhancements made are specific to the Awesome ML Program for Summer 2025.
 
 ## Author
 
