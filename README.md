@@ -55,3 +55,5 @@ The Jupyter notebook contains:
 ![Workclass vs Education](graphs/workclass_vs_education.png)
 ![Occupation vs Education](graphs/occupation_vs_education.png)
 ![Stacked Bar Plot of Relationship by Marital Status](graphs/marital_status_relationship.png)
+![Correlation Heatmap (Numerical Features)](graphs/correlation_heatmap.png)
+![Missing Value Heatmap](graphs/missing_value_heatmap.png)
