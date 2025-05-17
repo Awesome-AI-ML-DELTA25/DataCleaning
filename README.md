@@ -20,7 +20,7 @@ Link for installing: [Conda Download](https://www.anaconda.com/download/)
 ### Step 3: Create and activate the Conda environment
 
 To set up the same virtual environment as used in this project, run the following command:  
-` run conda env create -f environment.yml `
+` conda env create -f environment.yml `
 
 Activate the environment:  
 ` conda activate ml_env `
