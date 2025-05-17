@@ -1,14 +1,17 @@
-# To Do
-- Create a conda environment to store the packages
-- Unzip the data (use !unzip on terminal or use python package zipfile)
-- Load the data into a pandas dataframe
-- Clean the data (up to your discretion)
-- Work solo or in pairs
-- Ensure that your code is well commented
-- Create a jupyter notebook to document your work
-- Create a README file to explain your project, your process, and your findings
-- Create a requirements.txt file to document the packages you used
-- Create a .gitignore file to ignore the data files
-- Create a branch for your project on this repository
+# Data Cleaning 
+Data cleaning, also known as data cleansing or data scrubbing, is the process of identifying and correcting errors, inconsistencies, and inaccuracies within a dataset . The given dataset is in dataset.zip
 
-The best project will be merged into the main branch for showcase! Good luck!
+Common Data Cleaning Tasks:
+- Handling Missing Data – Filling in gaps or removing incomplete records.
+- Removing Duplicates – Eliminating redundant entries.
+- Correcting Inaccuracies – Fixing errors in data values.
+- Standardizing Formats – Ensuring uniformity in data representation.
+- Dealing with Outliers – Identifying and managing extreme values.
+
+Steps for data cleaning
+ 1. Assess Data Quality – Identify issues in the dataset.
+ 2. Remove Irrelevant Data – Filter out unnecessary information.
+ 3. Fix Structural Errors – Correct typos, naming inconsistencies, and formatting issues.
+ 4. Handle Missing Data – Use imputation techniques or remove incomplete records.
+ 5. Normalize Data – Standardize values for consistency.
+ 6. Identify and Manage Outliers – Detect and address anomalies
