@@ -25,5 +25,37 @@ To set up the same virtual environment as used in this project, run the followin
 Activate the environment:  
 ` conda activate ml_env `
 
-### Step 4: Step 4: Install required packages
- ` pip install -r /path/to/requirements.txt `  
+### Step 4: Install required packages
+ ` pip install -r /path/to/requirements.txt ` 
+
+
+## Usage
+
+1. Open the Jupyter notebook file (`data_cleaning.ipynb`) using Jupyter Lab or Jupyter Notebook.  
+2. Run the cells sequentially to reproduce the data cleaning, encoding, and analysis steps.  
+3. Visualizations and intermediate results will be displayed inline.
+
+
+## File Structure
+
+- `data/` — raw and processed datasets  
+- `data_cleaning.ipynb` — Jupyter notebook with code and visualizations  
+- `environment.yml` — Conda environment specification  
+- `requirements.txt` — Python packages
+
+## Summary of Jupyter File
+
+### Data Cleaning
+Missing values marked as `"?"` in columns like `workclass`, `occupation`, and `native.country` were replaced by sampling from the existing value distributions to maintain overall data balance.  
+Outliers in columns such as `age`, `hours.per.week`, and `fnlwgt` were identified but not removed due to insufficient context.
+
+### Encoding
+Categorical variables were encoded appropriately: label encoding was applied to binary/ordinal columns (`sex`, `income`, `marital.status`), while one-hot encoding was used for nominal variables like `race` and `relationship` to prepare data for modeling.
+
+### Analysis
+Numerical and categorical features were analyzed individually and in relation to each other, exploring correlations like `education.num` vs `capital.gain`, and patterns of `hours.per.week` across `sex`, `occupation`, and `income`. Various plots were used to visualize distributions and relationships to inform preprocessing.
+
+
+## Authors
+Aditey Nandan  
+Hasini G
