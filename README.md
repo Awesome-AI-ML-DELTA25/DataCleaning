@@ -1,4 +1,4 @@
-# Data Cleaning for Machine Learning
+# Data Cleaning and Analysis for Machine Learning
 
 ## Overview
 
