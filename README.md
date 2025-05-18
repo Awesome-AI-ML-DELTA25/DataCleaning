@@ -1,14 +1,30 @@
-# To Do
-- Create a conda environment to store the packages
-- Unzip the data (use !unzip on terminal or use python package zipfile)
-- Load the data into a pandas dataframe
-- Clean the data (up to your discretion)
-- Work solo or in pairs
-- Ensure that your code is well commented
-- Create a jupyter notebook to document your work
-- Create a README file to explain your project, your process, and your findings
-- Create a requirements.txt file to document the packages you used
-- Create a .gitignore file to ignore the data files
-- Create a branch for your project on this repository
+# Data Cleaning
 
-The best project will be merged into the main branch for showcase! Good luck!
+This repository contains the `data_cleaning.ipynb` notebook, which walks through essential data cleaning and preprocessing steps commonly used in machine learning pipelines.
+
+## Overview
+
+The notebook covers the following core topics:
+
+- Handling missing values
+- Removing duplicates
+- Data type conversions
+- Outlier detection and treatment
+- Normalization and scaling
+- Encoding categorical variables
+
+## Prerequisites
+
+- Python 3.x
+- Jupyter Notebook or JupyterLab
+- Required libraries:
+  - `pandas`
+  - `matplotlib`
+  - `seaborn`
+
+## How to Use
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
