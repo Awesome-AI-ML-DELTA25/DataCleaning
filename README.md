@@ -41,7 +41,7 @@ The main objectives are:
    - All categorical text fields were stripped of whitespace and converted to lowercase for consistency.
 
 4. **Converting Data Types:**
-   - Numeric columns such as `age`, `fnlwgt`, `education.num`, `capital.gain`, `capital.loss`, and `hours.per.week` were explicitly converted to numeric types.
+   - Numeric columns such as `age`, fnlwgt, `education.num`, `capital.gain`, `capital.loss`, and `hours.per.week` were explicitly converted to numeric types.
    - Rows that became invalid during conversion were dropped.
 
 5. **Feature Engineering:**
@@ -127,7 +127,103 @@ The main objectives are:
 - For all other racial groups ("black," "asian-pac-islander," "other," "amer-indian-eskimo"), the number of individuals is much lower compared to the "white" group.
 - "Race" as a feature may have limited predictive power for income in this dataset, except possibly for distinguishing the "white" group due to its size.
 
+### Capital Gain and Loss vs Income
+![Capital Gain vs Income](graphs/capital_gain_vs_income.png)
+![Capital Loss vs Income](graphs/capital_loss_vs_income.png)
+- Both capital gain and capital loss are extremely skewed: the vast majority of the population reports no capital gain or loss, with only a handful of individuals having significant values.
+- The few individuals with very high capital gains or losses could be influential outliers. 
+- While high capital gain and loss are more common among high earners, these cases are so rare that these features alone are unlikely to be strong predictors for most individuals.
+
+### Net Capital vs Income
+![Net Capital Boxplot](graphs/net_capital_boxplot.png)
+![Net Capital Violin](graphs/net_capital_violin.png)
+![Net Capital Histogram](graphs/net_capital_histogram.png)
+![Net Capital KDE](graphs/net_capital_kde.png)
+- **Zero-Dominated Distribution**: Both income groups show an overwhelming majority of individuals with net capital at or very near zero, as clearly shown in all four visualizations.
+- **Outlier Pattern**: The high-income group (>50k) has more frequent and higher-value outliers, with some individuals having net capital values reaching approximately 100,000.
+- **Greater Dispersion for High Earners**: While both groups center around zero, the >50k income group shows slightly more dispersion and a longer tail in the distributions.
+- **Extreme Skewness**: All visualizations demonstrate that net capital is extremely right-skewed for both income groups.
+
+### Age Distribution
+![Age Distribution](graphs/age_distribution.png)
+- The distribution of ages in the dataset is right-skewed (positively skewed), with most individuals concentrated between ages 20 and 50.
+- The presence of individuals above 80 could be checked for data entry errors, but their low frequency suggests they are not a major concern.
+- Any insights or predictions drawn from this data will be most applicable to the majority age groups (20–50), which may be relevant for workforce or economic studies.
+
+### FNLWGT Distribution
+![FNLWGT Distribution](graphs/fnlwgt_distribution.png)
+- The chart displays the distribution of the fnlwgt variable, which represents the number of people each record stands for in the dataset (a survey sample weight).
+- The distribution is right-skewed (positively skewed), with most fnlwgt values concentrated between 0 and 400,000.
+- The highest frequency occurs around 150,000–200,000, where the count of records peaks at about 5,000.
+- After 200,000, the frequency of records drops off rapidly, with very few records having fnlwgt values above 600,000.
+- There are rare outliers with extremely high fnlwgt values (up to 1.5 million), but these are exceptional cases.
+
+### Education Number Distribution
+![Education Number Distribution](graphs/education_num_distribution.png)
+- The distribution is unimodal and right-skewed, with a sharp peak at education numbers 9 and 10. This suggests that most individuals have completed these levels of education.
+- Lower education numbers (below 6) are rare, with very few individuals having minimal formal education.
+- The concentration at specific education levels may help in segmenting the population for analysis or predictive modeling.
+- The smoothness of the distribution and the expected peaks suggest the data is of good quality, with no obvious anomalies or errors.
+
+### Hours per Week Distribution
+![Hours per Week Distribution](graphs/hours_per_week_distribution.png)
+- The distribution of hours worked per week is sharply peaked at 40 hours, with a very large majority of individuals reporting this value.
+- There are smaller, secondary peaks at common part-time and overtime values (e.g., around 20, 30, 50, and 60 hours per week).
+- The extreme concentration at a single value (40 hours) may reduce the predictive power of this variable unless combined with other features (such as occupation or income).
+
+### Capital Gain and Loss Distribution
+![Capital Gain Distribution](graphs/capital_gain_distribution.png)
+![Capital Loss Distribution](graphs/capital_loss_distribution.png)
+- Both capital gain and capital loss variables are dominated by zeros, so using them as-is may not provide much predictive power. Also, it means that most individuals do not report capital gains or losses, indicating that such financial events are uncommon in the general population.
+- The few very high capital gains or losses are outliers and could disproportionately influence statistical models.
+- The presence of any capital gain or loss (rather than the amount) may be a more useful indicator for certain outcomes, such as higher income or investment activity.
+
+### Capital Gain vs Capital Loss
+![Capital Gain vs Capital Loss](graphs/capital_gain_vs_capital_loss.png)
+- The vast majority of data points cluster near the origin (0,0), meaning most individuals have both capital gain and capital loss values close to zero.
+- Most of the population does not experience significant capital gains or losses, but those who do (especially with large gains) are more likely to have higher incomes.
+- High capital gain is more commonly associated with high income, suggesting it could be a useful indicator for income prediction, despite being rare.
+- Capital loss does not show a strong separation between income groups, so its predictive value may be limited.
+
+### Correlation Matrix
+![Correlation Matrix](graphs/correlation_matrix.png)
+- The perfect correlation between capital gain and net capital (1.00) indicates redundancy. In modeling, using both would be redundant and potentially problematic.
+- Given the weak correlations overall, most variables likely provide independent information, making them all potentially valuable for modeling (except for the redundant pair).
+- The weak correlations suggest potential for creating interaction terms or derived features that might better capture relationships between variables.
+
 ### Conclusion
-- The dataset contains a wealth of information that can be used to predict income.
-- Key features include age, education, occupation, marital status, and hours worked per week.
-- The visualizations provide insights into the relationships between these features and income, highlighting potential areas for further analysis or modeling.
+**Income Patterns**  
+- **Higher income (>50k) associations**: Older age, higher education, managerial/professional occupations, marriage (civil spouse), longer work hours, and male gender.  
+- **Class imbalance**: Most individuals earn <=50k across all categories.  
+
+**Feature Distributions**  
+- **Right-skewed variables**: Age, education, hours worked, and fnlwgt cluster around typical working-age/education ranges.  
+- **Zero-dominated features**: Capital gain/loss values are near-zero for most, with rare extreme outliers.  
+- **Demographic bias**: Overrepresentation of U.S. residents and white individuals.  
+
+**Outliers and Data Quality**  
+- **Outlier presence**: Age, capital gain/loss, net capital, and fnlwgt require outlier handling to avoid model bias.  
+- **Rare/unknown categories**: Occupation, country, and marital status categories need consolidation or special treatment.  
+
+**Correlation Insights**  
+- **Perfect correlation**: Capital gain and net capital are redundant (r=1.00).  
+- **Weak linear relationships**: Most variables show correlations <0.15, suggesting non-linear modeling approaches.  
+
+### Implications  
+**Modeling and Feature Engineering**  
+1. **Preprocessing**: Address outliers (capping/removal), skewness (log transforms), and redundancy (drop net capital).  
+2. **Feature engineering**: Create binary flags (e.g., has_capital_gain), bin rare categories, and handle class imbalance (SMOTE/weighting).  
+3. **Model selection**: Prioritize non-linear models (e.g., tree-based algorithms) over linear models.  
+
+**Data Quality and Fairness**  
+- **Representation gaps**: Demographic biases (race/country) limit generalizability; consider fairness-aware modeling.  
+- **Validation**: Audit outliers and rare categories for data entry errors.  
+
+**Business and Policy Insights**  
+- **Targeted interventions**: Focus on upskilling for managerial/professional roles and supporting underrepresented groups.  
+- **Workforce trends**: Standard 40-hour workweeks dominate; explore overtime policies and part-time opportunities.  
+
+---
+
+## Final Conclusion
+The project demonstrates the critical importance of rigorous data cleaning and exploratory analysis before any modeling or decision-making. The cleaned dataset and visual insights provide a strong foundation for predictive modeling, policy analysis, or further research-but also highlight the necessity of addressing data quality, imbalance, and fairness throughout the process.
