@@ -56,13 +56,27 @@ Categorical variables were encoded appropriately: label encoding was applied to 
 Numerical and categorical features were analyzed individually and in relation to each other, exploring correlations like `education.num` vs `capital.gain`, and patterns of `hours.per.week` across `sex`, `occupation`, and `income`. Various plots were used to visualize distributions and relationships to inform preprocessing.
 
 ### Relevant Graphs
+#### Native Country Distribution (before cleaning)
 ![Native Country Distribution (before cleaning)](images/native_country_distribution.png)
+
+#### Native Country Distribution (after cleaning)
 ![Native Country Distribution (after cleaning)](images/native_country_distribution_filled.png)
+
+#### Change in distribution (by proportion) for Native Country
 ![Change in distribution (by proportion) for Native Country](images/country_proportion_difference.png)
+
+#### Heatmap of numerical values
 ![Heatmap of numerical values](images/heatmapnumero.png)
+
+#### Heatmap for columns like race, marital status etc.
 ![Heatmap for columns like race, marital status etc.](images/heatmapmaritalrace.png)
+
+#### Relation between income and various other factors
 ![Relation between income and various other factors](images/bargraphs_income.png)
+
+#### Graphs of some categorical columns, and their encoded versions
 ![Graphs of some categorical columns, and their encoded versions](images/categorical_encoded_distributions.png)
+
 
 
 ## Authors
